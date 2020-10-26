@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Search Players</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>MLB 2020 Season Stats</h1>
+    <h2>Individual Player Stats for the 2020 Season</h2>
+    <form action="/submit" method="POST">
+      <input class="form" type="text" name="name">
+      <input class="form" type="submit" value="Get Stats">
+    </form>
+    {% if search_suggestions %}
+      <h3>The player you entered does not exist, are you looking for one of these?</h3>
+      <div id="suggestions">
+        {% for name in search_suggestions %}
+          <form action="/submit" method="POST">
+            <button type="submit" value="{{ name[1] }}" name="name">{{ name[1] }}</button>
+          </form>
+        {% endfor %}
+      </div>
+    {% endif %}
+    {% block content %}{% endblock %}
+  </div>
+</body>
+</html>

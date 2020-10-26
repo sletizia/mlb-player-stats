@@ -1,0 +1,91 @@
+* {
+	padding: 0;
+	margin: 0;
+	color: #cccccc;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* Utility Styles */
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1rem; }
+
+body {
+	background-color: #0e1111;
+}
+
+
+/* Index.html styles */
+.container{
+	margin: auto;
+	width: 500px;
+	padding: 2rem;
+	background-color: #232b2b;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.container h1, .container h2, .container form {
+	padding-bottom: 1rem;
+}
+
+.form {
+	color: #0e1111;
+	background-color: #cccccc;
+}
+
+#suggestions {
+	display: flex;
+	flex-direction: row;
+}
+
+#suggestions form button {
+	margin: 0rem 1rem;
+	min-width: 100px;
+	color: #0e1111;
+	background-color: #cccccc;
+}
+
+/* Statpage.html */
+#playercard {
+	width: 450px;
+	background-color: #634e4d;
+	border-radius: 10px;
+	padding-bottom: .5rem;
+}
+
+#playercard h2 {
+	padding: .5rem 0rem 0rem .5rem;
+}
+
+/* Header Section (name and position) */
+#header {
+	background-color: #353839;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	padding: .5rem;
+}
+
+/* Stats Section */
+.stats {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.stats ul {
+	list-style: none;
+	padding: 0rem 1rem;
+
+}
+
+.stats ul li {
+	display: flex;
+	flex-direction: row;
+}
+
+.stats ul li p {
+	padding-top: 0px;
+	padding-left: 5px;
+}

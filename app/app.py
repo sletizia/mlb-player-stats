@@ -13,13 +13,15 @@ def hello_world():
 	# hr = p.hitting_stats[0]['stats']['homeRuns']
 	return render_template('index.html')
 
-@app.route('/submit', methods=['POST'])
+@app.route('/stats', methods=['POST'])
 def submit():
 	if request.method == 'POST':
 		search_name = request.form['name']
 		player = Player(search_name)
 		if player.exists:
 			player_info = player.player_info
+			# get team info and set colors -> do it in the player object
+			team_color = player.team_colors
 			# Maybe grab the team name and the position separatley so
 			# as to send less data to the client (low coupling)
 			if not player.hitting_stats:
@@ -34,7 +36,7 @@ def submit():
 				fielding_stats = None
 			else:
 				fielding_stats = player.fielding_stats[0]['stats']
-			return render_template('statpage.html', player_info=player_info, hitting_stats = hitting_stats, pitching_stats=pitching_stats, fielding_stats=fielding_stats)
+			return render_template('statpage.html', player_info=player_info, team_color=team_color, hitting_stats = hitting_stats, pitching_stats=pitching_stats, fielding_stats=fielding_stats)
 		else:
 			# find a name similar to the one searcherd
 			matches = search_helper.get_matches(search_name)

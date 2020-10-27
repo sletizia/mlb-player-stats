@@ -10,7 +10,7 @@
   <div class="container">
     <h1>MLB 2020 Season Stats</h1>
     <h2>Individual Player Stats for the 2020 Season</h2>
-    <form action="/submit" method="POST">
+    <form action="/stats" method="POST">
       <input class="form" type="text" name="name">
       <input class="form" type="submit" value="Get Stats">
     </form>
@@ -18,7 +18,7 @@
       <h3>The player you entered does not exist, are you looking for one of these?</h3>
       <div id="suggestions">
         {% for name in search_suggestions %}
-          <form action="/submit" method="POST">
+          <form action="/stats" method="POST">
             <button type="submit" value="{{ name[1] }}" name="name">{{ name[1] }}</button>
           </form>
         {% endfor %}

@@ -1,30 +1,64 @@
 {% extends 'index.html' %}
 
 {% block content %}
-  <section id="playercard">
-    <div id="header">
-      <h1>{{ player_info.firstName }} {{ player_info.lastName }}</h1>
-      <p>Position: {{ player_info.primaryPosition.abbreviation }}</p>
-    </div>
-    {% if hitting_stats != None %}
-    <h2>Hitting</h2>
+<section id="playercard" class="{{ team_color[1] }}">
+  <div id="header" class="{{ team_color[0] }}">
+    <h1>{{ player_info.firstName }} {{ player_info.lastName }}</h1>
+    <p>Position: {{ player_info.primaryPosition.abbreviation }}</p>
+  </div>
+  {% if hitting_stats != None %}
+  <h2>Hitting</h2>
+  <div>
     <div class="stats" id="hitting-stats">
       <ul>
-        <li><h3>AVG:</h3><p> {{ hitting_stats.avg }}</p></li>
-        <li><h3>OBP:</h3><p> {{ hitting_stats.obp }}</p></li>
-        <li><h3>SLG:</h3><p> {{ hitting_stats.slg }}</p></li>
-        <li><h3>OPS:</h3><p> {{ hitting_stats.ops }}</p></li>
+        <li>
+          <h3>AVG:</h3>
+          <p> {{ hitting_stats.avg }}</p>
+        </li>
+        <li>
+          <h3>OBP:</h3>
+          <p> {{ hitting_stats.obp }}</p>
+        </li>
+        <li>
+          <h3>SLG:</h3>
+          <p> {{ hitting_stats.slg }}</p>
+        </li>
+        <li>
+          <h3>OPS:</h3>
+          <p> {{ hitting_stats.ops }}</p>
+        </li>
       </ul>
       <ul>
-        <li><h3>AB's:</h3><p> {{ hitting_stats.atBats }}</p></li>
-        <li><h3>K's:</h3><p> {{ hitting_stats.strikeOuts }}</p></li>
-        <li><h3>BB's:</h3><p> {{ hitting_stats.baseOnBalls }}</p></li>
-        <li><h3>Hits:</h3><p> {{ hitting_stats.hits }}</p></li>
+        <li>
+          <h3>AB's:</h3>
+          <p> {{ hitting_stats.atBats }}</p>
+        </li>
+        <li>
+          <h3>K's:</h3>
+          <p> {{ hitting_stats.strikeOuts }}</p>
+        </li>
+        <li>
+          <h3>BB's:</h3>
+          <p> {{ hitting_stats.baseOnBalls }}</p>
+        </li>
+        <li>
+          <h3>Hits:</h3>
+          <p> {{ hitting_stats.hits }}</p>
+        </li>
       </ul>
       <ul>
-        <li><h3>HR:</h3><p> {{ hitting_stats.homeRuns }}</p></li>
-        <li><h3>Doubles:</h3><p> {{ hitting_stats.doubles }}</p></li>
-        <li><h3>Triples:</h3><p> {{ hitting_stats.triples }}</p></li>
+        <li>
+          <h3>HR:</h3>
+          <p> {{ hitting_stats.homeRuns }}</p>
+        </li>
+        <li>
+          <h3>Doubles:</h3>
+          <p> {{ hitting_stats.doubles }}</p>
+        </li>
+        <li>
+          <h3>Triples:</h3>
+          <p> {{ hitting_stats.triples }}</p>
+        </li>
       </ul>
     </div>
     {% endif %}
@@ -32,22 +66,58 @@
     <h2>Pitching</h2>
     <div class="stats" id="pitching-stats">
       <ul>
-        <li><h3>ERA:</h3><p> {{ pitching_stats.era }}</p></li>
-        <li><h3>K's:</h3><p> {{ pitching_stats.strikeOuts }}</p></li>
-        <li><h3>BB's:</h3><p> {{ pitching_stats.baseOnBalls }}</p></li>
-        <li><h3>BB's:</h3><p> {{ pitching_stats.hits }}</p></li>
+        <li>
+          <h3>ERA:</h3>
+          <p> {{ pitching_stats.era }}</p>
+        </li>
+        <li>
+          <h3>K's:</h3>
+          <p> {{ pitching_stats.strikeOuts }}</p>
+        </li>
+        <li>
+          <h3>BB's:</h3>
+          <p> {{ pitching_stats.baseOnBalls }}</p>
+        </li>
+        <li>
+          <h3>BB's:</h3>
+          <p> {{ pitching_stats.hits }}</p>
+        </li>
       </ul>
       <ul>
-        <li><h3>op AVG</h3><p> {{ pitching_stats.avg }}</p></li>
-        <li><h3>op OBP:</h3><p> {{ pitching_stats.obp }}</p></li>
-        <li><h3>op SLG:</h3><p> {{ pitching_stats.slg }}</p></li>
-        <li><h3>op OPS</h3><p> {{ pitching_stats.ops }}</p></li>
+        <li>
+          <h3>op AVG</h3>
+          <p> {{ pitching_stats.avg }}</p>
+        </li>
+        <li>
+          <h3>op OBP:</h3>
+          <p> {{ pitching_stats.obp }}</p>
+        </li>
+        <li>
+          <h3>op SLG:</h3>
+          <p> {{ pitching_stats.slg }}</p>
+        </li>
+        <li>
+          <h3>op OPS</h3>
+          <p> {{ pitching_stats.ops }}</p>
+        </li>
       </ul>
       <ul>
-        <li><h3>Innings:</h3><p> {{ pitching_stats.inningsPitched }}</p></li>
-        <li><h3>Wins:</h3><p> {{ pitching_stats.wins }}</p></li>
-        <li><h3>Losses:</h3><p> {{ pitching_stats.losses }}</p></li>
-        <li><h3>Saves:</h3><p> {{ pitching_stats.saves }}</p></li>
+        <li>
+          <h3>Innings:</h3>
+          <p> {{ pitching_stats.inningsPitched }}</p>
+        </li>
+        <li>
+          <h3>Wins:</h3>
+          <p> {{ pitching_stats.wins }}</p>
+        </li>
+        <li>
+          <h3>Losses:</h3>
+          <p> {{ pitching_stats.losses }}</p>
+        </li>
+        <li>
+          <h3>Saves:</h3>
+          <p> {{ pitching_stats.saves }}</p>
+        </li>
       </ul>
     </div>
     {% endif %}
@@ -55,22 +125,54 @@
     <h2>Fielding</h2>
     <div class="stats" id="fielding-stats">
       <ul>
-        <li><h3>Putouts:</h3><p> {{ fielding_stats.putOuts }}</p></li>
-        <li><h3>Assists:</h3><p> {{ fielding_stats.assists }}</p></li>
-        <li><h3>Errors:</h3><p> {{ fielding_stats.errors }}</p></li>
-        <li><h3>Chances:</h3><p> {{ fielding_stats.chances }}</p></li>
+        <li>
+          <h3>Putouts:</h3>
+          <p> {{ fielding_stats.putOuts }}</p>
+        </li>
+        <li>
+          <h3>Assists:</h3>
+          <p> {{ fielding_stats.assists }}</p>
+        </li>
+        <li>
+          <h3>Errors:</h3>
+          <p> {{ fielding_stats.errors }}</p>
+        </li>
+        <li>
+          <h3>Chances:</h3>
+          <p> {{ fielding_stats.chances }}</p>
+        </li>
       </ul>
       <ul>
-        <li><h3>Fielding:</h3><p> {{ fielding_stats.fielding }}</p></li>
-        <li><h3>Range Factor:</h3><p> {{ fielding_stats.rangeFactorPerGame }}</p></li>
-        <li><h3>Chances:</h3><p> {{ fielding_stats.innings }}</p></li>
+        <li>
+          <h3>Fielding:</h3>
+          <p> {{ fielding_stats.fielding }}</p>
+        </li>
+        <li>
+          <h3>Range Factor:</h3>
+          <p> {{ fielding_stats.rangeFactorPerGame }}</p>
+        </li>
+        <li>
+          <h3>Chances:</h3>
+          <p> {{ fielding_stats.innings }}</p>
+        </li>
       </ul>
       <ul>
-        <li><h3>Games:</h3><p> {{ fielding_stats.games }}</p></li>
-        <li><h3>Starts:</h3><p> {{ fielding_stats.gamesStarted }}</p></li>
-        <li><h3>doublePlays:</h3><p> {{ fielding_stats.doublePlays }}</p></li>
+        <li>
+          <h3>Games:</h3>
+          <p> {{ fielding_stats.games }}</p>
+        </li>
+        <li>
+          <h3>Starts:</h3>
+          <p> {{ fielding_stats.gamesStarted }}</p>
+        </li>
+        <li>
+          <h3>doublePlays:</h3>
+          <p> {{ fielding_stats.doublePlays }}</p>
+        </li>
       </ul>
     </div>
     {% endif %}
-  </section>
+  </div>
+
+</section>
 {% endblock %}

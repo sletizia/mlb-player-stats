@@ -9,13 +9,13 @@ Includes a Player module that retrieves and stores a players data
 Includes a simple SearchHelper Module that handles mispelling of names
 
 # Packages Used
-Flask: 
-  https://flask.palletsprojects.com/
-MLB-StatsAPI:
-  https://pypi.org/project/MLB-StatsAPI/
-  https://github.com/toddrob99/MLB-StatsAPI
-Python-Levenshtein:
-  https://pypi.org/project/python-Levenshtein/
+*Flask: 
+  *https://flask.palletsprojects.com/
+*MLB-StatsAPI:
+  *https://pypi.org/project/MLB-StatsAPI/
+  *https://github.com/toddrob99/MLB-StatsAPI
+*Python-Levenshtein:
+  *https://pypi.org/project/python-Levenshtein/
 
 # How to run
 run this command:

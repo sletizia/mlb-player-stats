@@ -1,171 +1,171 @@
 {% extends 'index.html' %}
 
 {% block content %}
-<section id="playercard" class="{{ team_color[1] }}">
-  <div id="header" class="{{ team_color[0] }}">
-    <h1>{{ player_info.firstName }} {{ player_info.lastName }}</h1>
-    <p>Position: {{ player_info.primaryPosition.abbreviation }}</p>
+<section id="playercard" class="{{ player.team_colors[1] }}">
+  <div id="header" class="{{ player.team_colors[0] }}">
+    <h1>{{ player.player_info.firstName }} {{ player.player_info.lastName }}</h1>
+    <p>Position: {{ player.player_info.primaryPosition.abbreviation }}</p>
   </div>
-  {% if hitting_stats != None %}
+  {% if player.hitting_stats != None %}
   <h2>Hitting</h2>
   <div>
     <div class="stats" id="hitting-stats">
       <ul>
         <li>
           <h3>AVG:</h3>
-          <p> {{ hitting_stats.avg }}</p>
+          <p> {{ player.hitting_stats.avg }}</p>
         </li>
         <li>
           <h3>OBP:</h3>
-          <p> {{ hitting_stats.obp }}</p>
+          <p> {{ player.hitting_stats.obp }}</p>
         </li>
         <li>
           <h3>SLG:</h3>
-          <p> {{ hitting_stats.slg }}</p>
+          <p> {{ player.hitting_stats.slg }}</p>
         </li>
         <li>
           <h3>OPS:</h3>
-          <p> {{ hitting_stats.ops }}</p>
+          <p> {{ player.hitting_stats.ops }}</p>
         </li>
       </ul>
       <ul>
         <li>
           <h3>AB's:</h3>
-          <p> {{ hitting_stats.atBats }}</p>
+          <p> {{ player.hitting_stats.atBats }}</p>
         </li>
         <li>
           <h3>K's:</h3>
-          <p> {{ hitting_stats.strikeOuts }}</p>
+          <p> {{ player.hitting_stats.strikeOuts }}</p>
         </li>
         <li>
           <h3>BB's:</h3>
-          <p> {{ hitting_stats.baseOnBalls }}</p>
+          <p> {{ player.hitting_stats.baseOnBalls }}</p>
         </li>
         <li>
           <h3>Hits:</h3>
-          <p> {{ hitting_stats.hits }}</p>
+          <p> {{ player.hitting_stats.hits }}</p>
         </li>
       </ul>
       <ul>
         <li>
           <h3>HR:</h3>
-          <p> {{ hitting_stats.homeRuns }}</p>
+          <p> {{ player.hitting_stats.homeRuns }}</p>
         </li>
         <li>
           <h3>Doubles:</h3>
-          <p> {{ hitting_stats.doubles }}</p>
+          <p> {{ player.hitting_stats.doubles }}</p>
         </li>
         <li>
           <h3>Triples:</h3>
-          <p> {{ hitting_stats.triples }}</p>
+          <p> {{ player.hitting_stats.triples }}</p>
         </li>
       </ul>
     </div>
     {% endif %}
-    {% if pitching_stats != None %}
+    {% if player.pitching_stats != [] %}
     <h2>Pitching</h2>
     <div class="stats" id="pitching-stats">
       <ul>
         <li>
           <h3>ERA:</h3>
-          <p> {{ pitching_stats.era }}</p>
+          <p> {{ player.pitching_stats.era }}</p>
         </li>
         <li>
           <h3>K's:</h3>
-          <p> {{ pitching_stats.strikeOuts }}</p>
+          <p> {{ player.pitching_stats.strikeOuts }}</p>
         </li>
         <li>
           <h3>BB's:</h3>
-          <p> {{ pitching_stats.baseOnBalls }}</p>
+          <p> {{ player.pitching_stats.baseOnBalls }}</p>
         </li>
         <li>
           <h3>BB's:</h3>
-          <p> {{ pitching_stats.hits }}</p>
+          <p> {{ player.pitching_stats.hits }}</p>
         </li>
       </ul>
       <ul>
         <li>
           <h3>op AVG</h3>
-          <p> {{ pitching_stats.avg }}</p>
+          <p> {{ player.pitching_stats.avg }}</p>
         </li>
         <li>
           <h3>op OBP:</h3>
-          <p> {{ pitching_stats.obp }}</p>
+          <p> {{ player.pitching_stats.obp }}</p>
         </li>
         <li>
           <h3>op SLG:</h3>
-          <p> {{ pitching_stats.slg }}</p>
+          <p> {{ player.pitching_stats.slg }}</p>
         </li>
         <li>
           <h3>op OPS</h3>
-          <p> {{ pitching_stats.ops }}</p>
+          <p> {{ player.pitching_stats.ops }}</p>
         </li>
       </ul>
       <ul>
         <li>
           <h3>Innings:</h3>
-          <p> {{ pitching_stats.inningsPitched }}</p>
+          <p> {{ player.pitching_stats.inningsPitched }}</p>
         </li>
         <li>
           <h3>Wins:</h3>
-          <p> {{ pitching_stats.wins }}</p>
+          <p> {{ player.pitching_stats.wins }}</p>
         </li>
         <li>
           <h3>Losses:</h3>
-          <p> {{ pitching_stats.losses }}</p>
+          <p> {{ player.pitching_stats.losses }}</p>
         </li>
         <li>
           <h3>Saves:</h3>
-          <p> {{ pitching_stats.saves }}</p>
+          <p> {{ player.pitching_stats.saves }}</p>
         </li>
       </ul>
     </div>
     {% endif %}
-    {% if fielding != None %}
+    {% if player.fielding_stats != [] %}
     <h2>Fielding</h2>
     <div class="stats" id="fielding-stats">
       <ul>
         <li>
           <h3>Putouts:</h3>
-          <p> {{ fielding_stats.putOuts }}</p>
+          <p> {{ player.fielding_stats.putOuts }}</p>
         </li>
         <li>
           <h3>Assists:</h3>
-          <p> {{ fielding_stats.assists }}</p>
+          <p> {{ player.fielding_stats.assists }}</p>
         </li>
         <li>
           <h3>Errors:</h3>
-          <p> {{ fielding_stats.errors }}</p>
+          <p> {{ player.fielding_stats.errors }}</p>
         </li>
         <li>
           <h3>Chances:</h3>
-          <p> {{ fielding_stats.chances }}</p>
+          <p> {{ player.fielding_stats.chances }}</p>
         </li>
         <li>
           <h3>Innings:</h3>
-          <p> {{ fielding_stats.innings }}</p>
+          <p> {{ player.fielding_stats.innings }}</p>
         </li>
       </ul>
       <ul>
         <li>
           <h3>Fielding avg:</h3>
-          <p> {{ fielding_stats.fielding }}</p>
+          <p> {{ player.fielding_stats.fielding }}</p>
         </li>
         <li>
           <h3>Range Factor:</h3>
-          <p> {{ fielding_stats.rangeFactorPerGame }}</p>
+          <p> {{ player.fielding_stats.rangeFactorPerGame }}</p>
         </li>
         <li>
           <h3>Games:</h3>
-          <p> {{ fielding_stats.games }}</p>
+          <p> {{ player.fielding_stats.games }}</p>
         </li>
         <li>
           <h3>Starts:</h3>
-          <p> {{ fielding_stats.gamesStarted }}</p>
+          <p> {{ player.fielding_stats.gamesStarted }}</p>
         </li>
         <li>
           <h3>doublePlays:</h3>
-          <p> {{ fielding_stats.doublePlays }}</p>
+          <p> {{ player.fielding_stats.doublePlays }}</p>
         </li>
       </ul>
     </div>

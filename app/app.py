@@ -8,36 +8,21 @@ app.debug = True
 search_helper = SearchHelper()
 
 @app.route('/')
-def hello_world():
-	# p = Player("alonso")
-	# hr = p.hitting_stats[0]['stats']['homeRuns']
+def home():
+	# Route for the home view
 	return render_template('index.html')
 
 @app.route('/stats', methods=['POST'])
 def submit():
+	# Route for the statistics view
+	# Either displays stats or re-renders index page with search suggestions
 	if request.method == 'POST':
 		search_name = request.form['name']
 		player = Player(search_name)
 		if player.exists:
-			player_info = player.player_info
-			# get team info and set colors -> do it in the player object
-			team_color = player.team_colors
-			# Maybe grab the team name and the position separatley so
-			# as to send less data to the client (low coupling)
-			if not player.hitting_stats:
-				hitting_stats = None
-			else:
-				hitting_stats = player.hitting_stats[0]['stats']
-			if not player.pitching_stats:
-				pitching_stats = None
-			else:
-				pitching_stats = player.pitching_stats[0]['stats']
-			if not player.fielding_stats:
-				fielding_stats = None
-			else:
-				fielding_stats = player.fielding_stats[0]['stats']
-			return render_template('statpage.html', player_info=player_info, team_color=team_color, hitting_stats = hitting_stats, pitching_stats=pitching_stats, fielding_stats=fielding_stats)
+			# Display the stats
+			return render_template('statpage.html', player=player)
 		else:
-			# find a name similar to the one searcherd
+			# Use the SearchHelper to find potential matches
 			matches = search_helper.get_matches(search_name)
 			return render_template('index.html', search_suggestions=matches)

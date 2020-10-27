@@ -10,8 +10,12 @@ Includes a simple SearchHelper Module that handles mispelling of names
 
 # How to run
 run this command:
+```
   pip install -r requirements.txt
+```
 Then run the app:
+```
   python3 run.py
+```
   
 That's it! Learn more here --> https://spencerletizia.com/

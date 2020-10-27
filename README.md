@@ -8,7 +8,7 @@ Grabs data from the MLB-StatsAPI.
 Includes a Player module that retrieves and stores a players data
 Includes a simple SearchHelper Module that handles mispelling of names
 
-# Packages Used
+# External Documentation
 * Flask: 
   * https://flask.palletsprojects.com/
 * MLB-StatsAPI:

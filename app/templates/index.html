@@ -10,9 +10,9 @@
   <div class="container">
     <h1>MLB 2020 Season Stats</h1>
     <h2>Individual Player Stats for the 2020 Season</h2>
-    <form action="/stats" method="POST">
+    <form id="search-form" action="/stats" method="POST">
       <input class="form" type="text" name="name">
-      <input class="form" type="submit" value="Get Stats">
+      <input class="form btn" type="submit" value="Get Stats">
     </form>
     {% if search_suggestions %}
       <h3>The player you entered does not exist, are you looking for one of these?</h3>

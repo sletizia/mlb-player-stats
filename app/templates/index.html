@@ -19,12 +19,20 @@
       <div id="suggestions">
         {% for name in search_suggestions %}
           <form action="/stats" method="POST">
-            <button type="submit" value="{{ name[1] }}" name="name">{{ name[1] }}</button>
+            <input class="btn" type="submit" value="{{ name[1] }}" name="name">
           </form>
         {% endfor %}
       </div>
     {% endif %}
     {% block content %}{% endblock %}
+    <div id="info">
+      <b>This data is provided by the MLB-StatsAPI</b>
+      <ul>
+        <li><a href="https://pypi.org/project/MLB-StatsAPI/">MLB-StatsAPI</a></li>
+        <li><a href="https://spencerletizia.com/">Developer Blog</a></li>
+        <li><a href="https://github.com/sletizia/MLB-Player-Stats">Code on Github</a></li>
+      </ul>
+    </div>
   </div>
 </body>
 </html>

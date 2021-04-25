@@ -1,8 +1,6 @@
 # MLB-Player-Stats
 
 This project includes a simple frontend and backend implementation using Python Flask and HTML.
-Function is to retrieve and display statistics for individual Major League Baseball Players.
-All data is provided by Major League Baseball.
 
 Grabs data from the MLB-StatsAPI.
 Includes a Player module that retrieves and stores a players data
